@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".MainActivity">
+
+    //상단 타이틀뷰 20
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="100">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="50"
+                android:background="#B8B8B8" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:text="Calculator"
+                android:textColor="#595959"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:outlineAmbientShadowColor="#F80909"/>
+<!--            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:text="Calculator"
+                android:textColor="#ffffff"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:outlineAmbientShadowColor="#F80909"
+                android:background="@drawable/title_backgrount_calculator" />-->
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    //라인용 뷰
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#9F9F9F"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+
+    //상단 결과창뷰 20
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:orientation="vertical">
+
+
+        //결과 계산 과정 텍스트뷰
+
+        <TextView
+            android:id="@+id/result_process_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:layout_weight="40"
+            android:gravity="center_vertical|right"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="0"
+            android:textSize="24sp" />
+
+        //결과창 텍스트뷰
+
+        <TextView
+            android:id="@+id/result_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:layout_weight="80"
+            android:gravity="center_vertical|right"
+            android:padding="5dp"
+            android:text="0"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    //라인용 뷰
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#9F9F9F"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    //하단 키입력뷰
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="60"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="100">
+
+        //첫번째 줄 AC, CE, BS, /
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <Button
+                android:id="@+id/all_clear_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:onClick="functionalButtonClick"
+                android:text="AC"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/clear_entity_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:onClick="functionalButtonClick"
+                android:text="CE"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/back_space_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:onClick="functionalButtonClick"
+                android:text="BS"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/division_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#FFA8A8A8"
+                android:onClick="operatingFunctionalButtonClick"
+                android:text="/"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+
+        //두번째 줄 AC, CE, BS, /
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <Button
+                android:id="@+id/num_7_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="7"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/num_8_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="8"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/num_9_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="9"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/multiply_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#FFA8A8A8"
+                android:onClick="operatingFunctionalButtonClick"
+                android:text="*"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+
+        //세번째 줄 AC, CE, BS, /
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <Button
+                android:id="@+id/num_4_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="4"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/num_5_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="5"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/num_6_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="6"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/minus_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#FFA8A8A8"
+                android:onClick="operatingFunctionalButtonClick"
+                android:text="-"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        //네번째 줄
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <Button
+                android:id="@+id/num_1_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="1"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/num_2_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="2"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/num_3_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="3"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/plus_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#FFA8A8A8"
+                android:onClick="operatingFunctionalButtonClick"
+                android:text="+"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        //다섯번째 줄 AC, CE, BS, /
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <Button
+                android:id="@+id/num_0_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="0"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/decimal_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#EDEDED"
+                android:onClick="numberFunctionalButtonClick"
+                android:text="."
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/equal_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="#FFA8A8A8"
+                android:onClick="operatingFunctionalButtonClick"
+                android:text="="
+                android:textSize="30sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
